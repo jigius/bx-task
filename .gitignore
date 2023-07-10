@@ -1,0 +1,12 @@
+components
+modules/*
+!modules/foo
+!.gitignore
+
+!LICENCE
+!README
+/*.php
+/*.log
+/*.csv
+
+
