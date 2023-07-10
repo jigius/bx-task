@@ -1,4 +1,4 @@
-components
+/components
 modules/*
 !modules/foo
 !.gitignore
