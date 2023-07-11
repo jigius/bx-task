@@ -8,15 +8,12 @@ use Bitrix\Main;
 use Bitrix\Iblock;
 use Foo\Catalog\Foundation as F;
 
-
-if (
-    !defined('B_PROLOG_INCLUDED') ||
-    B_PROLOG_INCLUDED !== true ||
-    !Main\Loader::includeModule('iblock') ||
-    !Main\Loader::includeModule('foo')
-) {
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     throw new LogicException("Environment is broken :(");
 }
+
+Main\Loader::includeModule('iblock');
+Main\Loader::includeModule('foo');
 
 final class ComplexComponent extends CBitrixComponent
 {
