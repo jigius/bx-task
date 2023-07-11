@@ -1,23 +1,27 @@
 <?php
 /**
- * Complex component
+ *
+ * Complex component. Is used for pass a user's request to one of defined plain component.
+ *
  */
 use Bitrix\Main;
 use Bitrix\Iblock;
+use Foo\Catalog\Foundation as F;
 
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
-    die();
+if (
+    !defined('B_PROLOG_INCLUDED') ||
+    B_PROLOG_INCLUDED !== true ||
+    !Main\Loader::includeModule('iblock') ||
+    !Main\Loader::includeModule('foo')
+) {
+    throw new LogicException("Environment is broken :(");
 }
 
-if (!CModule::IncludeModule('iblock')) {
-    die();
-}
-
-/**
- * Complex component. Is used for pass a user's request to one of defined plain component.
- */
-class ComplexComponent extends CBitrixComponent
+final class ComplexComponent extends CBitrixComponent
 {
+    private const COMPONENT_PAGE_404 = "404";
+    private const COMPONENT_PAGE_ERROR = "error";
+
     /**
      * @var array
      */
@@ -38,6 +42,7 @@ class ComplexComponent extends CBitrixComponent
      */
     public function executeComponent(): void
     {
+        ob_start();
         try {
             if ($this->arParams["SEF_MODE"] === "Y") {
                 $componentPage = $this->sefMode();
@@ -50,15 +55,16 @@ class ComplexComponent extends CBitrixComponent
             $this->IncludeComponentTemplate($componentPage);
         } catch (RuntimeException $ex) {
             if ($ex->getCode() === 404) {
-                $this->page404();
+                ob_clean();
+                $this->notFound();
             } else {
                 throw $ex;
             }
-        } catch (Throwable $ex) {
-            /**
-             * TODO: Show error page!
-             */
-            throw $ex;
+        } catch (F\ExplainedToUserException $ex) {
+            ob_clean();
+            $this->IncludeComponentTemplate(self::COMPONENT_PAGE_ERROR);
+        } finally {
+            ob_end_flush();
         }
     }
 
@@ -150,17 +156,21 @@ class ComplexComponent extends CBitrixComponent
     }
 
     /**
-     * Outputs page with error 404
+     * Shows page 404 or redirects request on page `notfound`. It depends on component's 404-options.
      * @return void
      */
-    private function page404(): void
+    private function notFound(): void
     {
-        Iblock\Component\Tools::process404(
-            $this->arParams["MESSAGE_404"],
-            $this->arParams["SET_STATUS_404"] === "Y",
-            $this->arParams["SET_STATUS_404"] === "Y",
-            $this->arParams["SHOW_404"] === "Y",
-            $this->arParams["FILE_404"]
-        );
+        if ($this->arParams["SHOW_404"] === "Y") {
+            Iblock\Component\Tools::process404(
+                $this->arParams["MESSAGE_404"],
+                $this->arParams["SET_STATUS_404"] === "Y",
+                $this->arParams["SET_STATUS_404"] === "Y",
+                $this->arParams["SHOW_404"] === "Y",
+                $this->arParams["FILE_404"]
+            );
+        } else {
+            $this->IncludeComponentTemplate(self::COMPONENT_PAGE_404);
+        }
     }
 }
