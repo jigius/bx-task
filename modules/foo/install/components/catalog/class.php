@@ -8,6 +8,7 @@ use Bitrix\Main;
 use Bitrix\Iblock;
 use Foo\Catalog\Foundation as F;
 
+
 if (
     !defined('B_PROLOG_INCLUDED') ||
     B_PROLOG_INCLUDED !== true ||
@@ -42,7 +43,6 @@ final class ComplexComponent extends CBitrixComponent
      */
     public function executeComponent(): void
     {
-        ob_start();
         try {
             if ($this->arParams["SEF_MODE"] === "Y") {
                 $componentPage = $this->sefMode();
@@ -55,16 +55,14 @@ final class ComplexComponent extends CBitrixComponent
             $this->IncludeComponentTemplate($componentPage);
         } catch (RuntimeException $ex) {
             if ($ex->getCode() === 404) {
-                ob_clean();
+                $this->restartBuffer();
                 $this->notFound();
             } else {
                 throw $ex;
             }
         } catch (F\ExplainedToUserException $ex) {
-            ob_clean();
+            $this->restartBuffer();
             $this->IncludeComponentTemplate(self::COMPONENT_PAGE_ERROR);
-        } finally {
-            ob_end_flush();
         }
     }
 
@@ -172,5 +170,19 @@ final class ComplexComponent extends CBitrixComponent
         } else {
             $this->IncludeComponentTemplate(self::COMPONENT_PAGE_404);
         }
+    }
+
+    /**
+     * Restarts buffer
+     * TODO: refactoring is needed with using the kernel D7
+     * @return void
+     */
+    private function restartBuffer(): void
+    {
+        global $APPLICATION;
+        /**
+         * @var CMain $APPLICATION
+         */
+        $APPLICATION->RestartBuffer();
     }
 }
