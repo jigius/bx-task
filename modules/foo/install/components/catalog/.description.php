@@ -1,15 +1,19 @@
 <?php
-$arComponentDescription = array(
-    "NAME" => "Тестовое задание",
-    "DESCRIPTION" => "Тестовое задание - магазин ноутбуков",
+$arComponentDescription = [
+    "NAME" => GetMessage("FOO_CATALOG_NAME"),
+    "DESCRIPTION" => GetMessage("FOO_CATALOG_DESCRIPTION"),
     "ICON" => "/images/icon.gif",
-    "PATH" => array(
-        "ID" => "other_components",
-        "CHILD" => array(
-            "ID" => "catalog",
-            "NAME" => "Тестовое задание"
-        )
-    ),
+    "PATH" => [
+        "ID" => "content",
+        "CHILD" => [
+            "ID" => "foo",
+            "NAME" => GetMessage("T_FOO_DESC_CATALOG"),
+            "SORT" => 10,
+            "CHILD" => [
+                "ID" => "foo_cmpx",
+            ],
+        ]
+    ],
     "CACHE_PATH" => "Y",
     "COMPLEX" => "Y"
-);
+];

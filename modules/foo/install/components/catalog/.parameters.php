@@ -1,47 +1,46 @@
 <?php
 
-use Bitrix\Main\Loader;
+use Bitrix\Main;
 
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
-    die();
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    throw new LogicException("Environment is broken :(");
 }
-/** @var array $arCurrentValues */
-Loader::includeModule('iblock');
+
+Main\Loader::includeModule('iblock');
 
 $arComponentParameters = [
     "PARAMETERS" => [
-        "VARIABLE_ALIASES" => [//псевдоимена
+        "VARIABLE_ALIASES" => [
             "MODEL" => [
-                "NAME" => 'ID модели',
+                "NAME" => GetMessage("FOO_CATALOG_VA_MODEL"),
             ],
             "BRAND" => [
-                "NAME" => 'ID бренда',
+                "NAME" => GetMessage("FOO_CATALOG_VA_BRAND"),
             ],
-            "NOTEBOOK" => [
-                "NAME" => 'ID ноутбука'
+            "DETAIL" => [
+                "NAME" => GetMessage("FOO_CATALOG_VA_DETAIL")
             ],
         ],
         "SEF_MODE" => [
             "detail" => [
-                "NAME" => 'Детальная страница',
+                "NAME" => GetMessage("FOO_CATALOG_SEF_DETAIL"),
                 "DEFAULT" => "detail/#DETAIL#/",
                 "VARIABLES" => []
             ],
             "brand" => [
-                "NAME" => 'Список производителей',
+                "NAME" => GetMessage("FOO_CATALOG_SEF_BRAND"),
                 "DEFAULT" => "",
-                "VARIABLES" => [
-                ],
+                "VARIABLES" => [],
             ],
             "model" => [
-                "NAME" => 'Список моделей',
+                "NAME" => GetMessage("FOO_CATALOG_SEF_MODEL"),
                 "DEFAULT" => "#BRAND#/",
                 "VARIABLES" => [
                     "BRAND"
                 ],
             ],
             "product" => [
-                "NAME" => 'Список товаров',
+                "NAME" => GetMessage("FOO_CATALOG_SEF_PRODUCT"),
                 "DEFAULT" => "#BRAND#/#MODEL#/",
                 "VARIABLES" => [
                     "BRAND",

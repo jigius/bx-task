@@ -1,5 +1,3 @@
-brand
-
+Brand
 <?php
-//throw new RuntimeException("", 404);
-var_dump(get_defined_vars());
+throw new \Foo\Catalog\Foundation\ExplainedToUserException("Heyaaa!");
