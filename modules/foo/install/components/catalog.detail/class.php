@@ -29,6 +29,15 @@ final class FooCatalogDetail extends CBitrixComponent
      */
     public function executeComponent(): void
     {
-        $this->includeComponentTemplate();
+        if (!isset($this->arParams["ID"]) || !is_numeric($this->arParams["ID"])) {
+            throw new InvalidArgumentException("`ID` is not defined or its type is invalid");
+        }
+        $product =
+            (new ProductVanilla())
+                ->withId((int)$this->arParams["ID"])
+                ->loaded();
+
+        //\Foo\Catalog\ORM\ProductTable::
+        $this->includeComponentTemplate("foo");
     }
 }
