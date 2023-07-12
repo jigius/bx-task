@@ -15,6 +15,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 Main\Loader::includeModule('iblock');
 Main\Loader::includeModule('foo');
 
+IncludeModuleLangFile(__FILE__);
+
+Main\UI\Extension::load("ui.bootstrap4");
+
 final class ComplexComponent extends CBitrixComponent
 {
     private const COMPONENT_PAGE_404 = "404";

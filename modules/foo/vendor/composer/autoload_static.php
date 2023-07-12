@@ -33,6 +33,18 @@ class ComposerStaticInit81090acd5f8c4d38cdcf3aa3a8f18366
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Foo\\Catalog\\App\\FilterInterface' => __DIR__ . '/../..' . '/lib/App/FilterInterface.php',
+        'Foo\\Catalog\\App\\FilterVanilla' => __DIR__ . '/../..' . '/lib/App/FilterVanilla.php',
+        'Foo\\Catalog\\App\\GridInterface' => __DIR__ . '/../..' . '/lib/App/GridInterface.php',
+        'Foo\\Catalog\\App\\GridVanilla' => __DIR__ . '/../..' . '/lib/App/GridVanilla.php',
+        'Foo\\Catalog\\App\\PaginationInterface' => __DIR__ . '/../..' . '/lib/App/PaginationInterface.php',
+        'Foo\\Catalog\\App\\PaginationVanilla' => __DIR__ . '/../..' . '/lib/App/PaginationVanilla.php',
+        'Foo\\Catalog\\App\\URN\\UrnInterface' => __DIR__ . '/../..' . '/lib/App/URN/UrnInterface.php',
+        'Foo\\Catalog\\App\\URN\\UrnVanilla' => __DIR__ . '/../..' . '/lib/App/URN/UrnVanilla.php',
+        'Foo\\Catalog\\App\\UrnItemInterface' => __DIR__ . '/../..' . '/lib/App/UrnItemInterface.php',
+        'Foo\\Catalog\\App\\UrnItemManufacturer' => __DIR__ . '/../..' . '/lib/App/UrnItemManufacturer.php',
+        'Foo\\Catalog\\App\\UrnItemModel' => __DIR__ . '/../..' . '/lib/App/UrnItemModel.php',
+        'Foo\\Catalog\\App\\UrnItemProduct' => __DIR__ . '/../..' . '/lib/App/UrnItemProduct.php',
         'Foo\\Catalog\\Foundation\\ExplainedToUserException' => __DIR__ . '/../..' . '/lib/Foundation/ExplainedToUserException.php',
         'Foo\\Catalog\\Foundation\\PrinterInterface' => __DIR__ . '/../..' . '/lib/Foundation/PrinterInterface.php',
         'Foo\\Catalog\\ORM\\ConfiguredEntities' => __DIR__ . '/../..' . '/lib/ORM/ConfiguredEntities.php',

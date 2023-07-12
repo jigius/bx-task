@@ -7,6 +7,18 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Foo\\Catalog\\App\\FilterInterface' => $baseDir . '/lib/App/FilterInterface.php',
+    'Foo\\Catalog\\App\\FilterVanilla' => $baseDir . '/lib/App/FilterVanilla.php',
+    'Foo\\Catalog\\App\\GridInterface' => $baseDir . '/lib/App/GridInterface.php',
+    'Foo\\Catalog\\App\\GridVanilla' => $baseDir . '/lib/App/GridVanilla.php',
+    'Foo\\Catalog\\App\\PaginationInterface' => $baseDir . '/lib/App/PaginationInterface.php',
+    'Foo\\Catalog\\App\\PaginationVanilla' => $baseDir . '/lib/App/PaginationVanilla.php',
+    'Foo\\Catalog\\App\\URN\\UrnInterface' => $baseDir . '/lib/App/URN/UrnInterface.php',
+    'Foo\\Catalog\\App\\URN\\UrnVanilla' => $baseDir . '/lib/App/URN/UrnVanilla.php',
+    'Foo\\Catalog\\App\\UrnItemInterface' => $baseDir . '/lib/App/UrnItemInterface.php',
+    'Foo\\Catalog\\App\\UrnItemManufacturer' => $baseDir . '/lib/App/UrnItemManufacturer.php',
+    'Foo\\Catalog\\App\\UrnItemModel' => $baseDir . '/lib/App/UrnItemModel.php',
+    'Foo\\Catalog\\App\\UrnItemProduct' => $baseDir . '/lib/App/UrnItemProduct.php',
     'Foo\\Catalog\\Foundation\\ExplainedToUserException' => $baseDir . '/lib/Foundation/ExplainedToUserException.php',
     'Foo\\Catalog\\Foundation\\PrinterInterface' => $baseDir . '/lib/Foundation/PrinterInterface.php',
     'Foo\\Catalog\\ORM\\ConfiguredEntities' => $baseDir . '/lib/ORM/ConfiguredEntities.php',
