@@ -5,7 +5,7 @@ namespace Foo\Catalog\ORM;
 use Bitrix\Main\ORM as Base;
 
 /**
- * Extends base class for the appending additional statements for db scheme changing   
+ * Extends base class for the appending additional statements for db scheme changing
  */
 final class ProductOptionEntity extends Base\Entity
 {

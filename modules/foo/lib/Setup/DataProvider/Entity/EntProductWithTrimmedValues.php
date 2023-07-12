@@ -7,7 +7,6 @@ namespace Foo\Catalog\Setup\DataProvider\Entity;
  */
 final class EntProductWithTrimmedValues extends EnvlpProduct implements MutableProductInterface
 {
-
     /**
      * @inheritDoc
      */

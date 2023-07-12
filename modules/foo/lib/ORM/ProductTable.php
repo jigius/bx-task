@@ -1,4 +1,5 @@
 <?php
+
 namespace Foo\Catalog\ORM;
 
 use Bitrix\Main\Entity;
@@ -123,19 +124,4 @@ final class ProductTable extends DataManager
     {
         return ProductEntity::class;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public static function getObjectClass(): string
-    {
-        return Product::class;
-    }
-}
-
-/**
- * Defines alias - more handy name for the entity
- */
-class Product extends EO_Product
-{
 }

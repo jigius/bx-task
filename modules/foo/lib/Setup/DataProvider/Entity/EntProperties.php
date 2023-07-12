@@ -49,5 +49,4 @@ final class EntProperties implements PropertiesInterface
         $that->i = $this->i;
         return $that;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Foo\Catalog\ORM;
 
 use Bitrix\Main;
@@ -22,14 +23,14 @@ abstract class DataManager extends Main\Entity\DataManager
                 'CREATED',
                 [
                     'nullable' => false,
-                    self::PARAM_CHANGE_BY_CLIENT_IS_PROHIBITED => true
+                    DataManager::PARAM_CHANGE_BY_CLIENT_IS_PROHIBITED => true
                 ]
             ),
             new Main\Entity\DatetimeField(
                 'MODIFIED',
                 [
                     'nullable' => false,
-                    self::PARAM_CHANGE_BY_CLIENT_IS_PROHIBITED => true
+                    DataManager::PARAM_CHANGE_BY_CLIENT_IS_PROHIBITED => true
                 ]
             )
         ];
@@ -66,7 +67,7 @@ abstract class DataManager extends Main\Entity\DataManager
         $er = new Main\Entity\EventResult();
         $fields = $event->getEntity()->getFields();
         foreach ($fields as $f) {
-            if ($f->getParameter(self::PARAM_CHANGE_BY_CLIENT_IS_PROHIBITED) ?? false) {
+            if ($f->getParameter(DataManager::PARAM_CHANGE_BY_CLIENT_IS_PROHIBITED) ?? false) {
                 $er->unsetField($f->getName());
             }
         }

@@ -143,6 +143,6 @@ final class UrnVanilla implements UrnInterface
             $ret[] = "BRAND=" . (int)$this->i['manufacturerId'];
         }
         $query = implode("&", $ret);
-        return rtrim($this->i['base'], "/") . "/index.php" . (!empty($query)? "?" . $query: "");
+        return rtrim($this->i['base'], "/") . "/index.php" . (!empty($query) ? "?" . $query : "");
     }
 }

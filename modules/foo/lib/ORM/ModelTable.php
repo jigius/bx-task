@@ -1,4 +1,5 @@
 <?php
+
 namespace Foo\Catalog\ORM;
 
 use Bitrix\Main\Entity;
@@ -92,19 +93,4 @@ final class ModelTable extends DataManager
     {
         return ModelEntity::class;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public static function getObjectClass(): string
-    {
-        return Model::class;
-    }
-}
-
-/**
- * Defines alias - more handy name for the entity
- */
-class Model extends EO_Model
-{
 }

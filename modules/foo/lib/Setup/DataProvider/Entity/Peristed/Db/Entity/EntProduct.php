@@ -89,8 +89,7 @@ final class EntProduct implements Db\EntityProductInterface
                         throw (new ORM\ExceptionWithResult("request failure"))->withResult($result);
                     }
                 });
-
-        }) ($result->getId());
+        })($result->getId());
     }
 
     /**

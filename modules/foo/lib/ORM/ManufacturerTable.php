@@ -1,4 +1,5 @@
 <?php
+
 namespace Foo\Catalog\ORM;
 
 use Bitrix\Main\Entity;
@@ -75,19 +76,4 @@ final class ManufacturerTable extends DataManager
                 parent::getMap()
             );
     }
-
-    /**
-     * @inheritDoc
-     */
-    public static function getObjectClass(): string
-    {
-        return Manufacturer::class;
-    }
-}
-
-/**
- * Defines alias - more handy name for the entity
- */
-class Manufacturer extends EO_Manufacturer
-{
 }

@@ -66,7 +66,8 @@ final class TextFile implements FileInterface
                     0,
                     new RuntimeException(
                         error_get_last()['message'] ?? "Unknown"
-                    ));
+                    )
+                );
         }
     }
 

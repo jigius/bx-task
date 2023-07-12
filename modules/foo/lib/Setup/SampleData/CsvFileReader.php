@@ -99,13 +99,13 @@ final class CsvFileReader implements ReaderInterface
         try {
             $this->f = $this->f->seeked($this->ifst);
         } catch (RuntimeException $ex) {
-                throw
-                    new RuntimeException(
-                        "error rewind pointer to a start position",
-                        0,
-                        $ex
-                    );
-            }
+            throw
+                new RuntimeException(
+                    "error rewind pointer to a start position",
+                    0,
+                    $ex
+                );
+        }
     }
 
     /**

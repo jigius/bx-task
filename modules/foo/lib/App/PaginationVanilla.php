@@ -56,7 +56,7 @@ final class PaginationVanilla implements PaginationInterface
      * @inheritDoc
      * @throws LogicException
      */
-    public function PageNavigation(): UI\PageNavigation
+    public function pageNavigation(): UI\PageNavigation
     {
         if (!isset($this->i['id'])) {
             throw new LogicException("`id` is not defined");

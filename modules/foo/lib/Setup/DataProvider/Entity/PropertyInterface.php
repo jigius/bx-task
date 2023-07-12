@@ -12,4 +12,3 @@ interface PropertyInterface
      */
     public function name(): string;
 }
-

@@ -17,8 +17,13 @@ interface PaginationInterface
      * Returns stock bx instance
      * @return UI\PageNavigation
      */
-    public function PageNavigation(): UI\PageNavigation;
+    public function pageNavigation(): UI\PageNavigation;
 
+    /**
+     * @param string $name
+     * @param int $count
+     * @return PaginationInterface
+     */
     public function withPageSizeVariant(string $name, int $count): PaginationInterface;
 
     /**

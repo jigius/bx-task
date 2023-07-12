@@ -39,7 +39,7 @@ final class TskFindFootprintsIntoDbScheme implements TaskInterface
         $this
             ->entities
             ->each(
-                function (Entity $entity) use (&$found): ?bool  {
+                function (Entity $entity) use (&$found): ?bool {
                     $continue = true;
                     if ($entity->getConnection()->isTableExists($entity->getDBTableName())) {
                         $found = true;

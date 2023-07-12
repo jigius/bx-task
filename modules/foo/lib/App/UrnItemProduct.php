@@ -7,23 +7,23 @@ namespace Foo\Catalog\App;
  */
 final class UrnItemProduct implements UrnItemInterface
 {
-     /**
-      * @var URN\UrnInterface
-      */
-     private URN\UrnInterface $urn;
+    /**
+    * @var URN\UrnInterface
+    */
+    private URN\UrnInterface $urn;
 
-     /**
-      * Cntr
-      * @param URN\UrnInterface $urn
-      */
-     public function __construct(URN\UrnInterface $urn)
+    /**
+    * Cntr
+    * @param URN\UrnInterface $urn
+    */
+    public function __construct(URN\UrnInterface $urn)
     {
         $this->urn = $urn;
     }
 
     /**
-     * @inheritDoc
-     */
+    * @inheritDoc
+    */
     public function withId(int $id): URN\UrnInterface
     {
         return $this->urn->withProduct($id);

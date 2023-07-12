@@ -124,12 +124,12 @@ final class GridVanilla implements GridInterface
             $this
                 ->nav
                 ->withId($this->i['id'] . "-nav")
-                ->PageNavigation()
+                ->pageNavigation()
                     ->allowAllRecords(true)
                     ->setPageSize(
-                        (function(array $cOpts, $nOpts): int {
+                        (function (array $cOpts, array $nOpts): int {
                             return $cOpts["page_size"] ?? $nOpts["nPageSize"] ?? 20;
-                        }) ($opts->getCurrentOptions(), $opts->GetNavParams())
+                        })($opts->getCurrentOptions(), $opts->GetNavParams())
                     );
         $nav->initFromUri();
         $query =
@@ -147,7 +147,7 @@ final class GridVanilla implements GridInterface
                     ->setOrder(
                         (function (array $opts): array {
                             return $opts['sort'];
-                        }) ($opts->GetSorting(['sort' => ['ID' => 'DESC']]))
+                        })($opts->GetSorting(['sort' => ['ID' => 'DESC']]))
                     );
         $totalCount = $query->queryCountTotal();
         $nav->setRecordCount($totalCount);

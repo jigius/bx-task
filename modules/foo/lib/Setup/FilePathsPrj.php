@@ -35,7 +35,7 @@ final class FilePathsPrj implements FilePathsInterface
             $ret =
                 array_map(
                     function (array $itm): array {
-                        foreach($itm as $key => $val) {
+                        foreach ($itm as $key => $val) {
                             $itm[$key] = implode(
                                 "",
                                 [

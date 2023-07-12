@@ -9,7 +9,6 @@ use DomainException;
  */
 final class EntProductWithThrowExceptionIfValueIsEmpty extends EnvlpProduct implements MutableProductInterface
 {
-
     /**
      * @inheritDoc
      * @throws DomainException

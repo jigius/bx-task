@@ -1,4 +1,5 @@
 <?php
+
 namespace Foo\Catalog\ORM;
 
 use Bitrix\Main\Entity;
@@ -76,18 +77,4 @@ final class OptionTable extends DataManager
                 parent::getMap()
             );
     }
-    /**
-     * @inheritDoc
-     */
-    public static function getObjectClass(): string
-    {
-        return Option::class;
-    }
-}
-
-/**
- * Defines alias - more handy name for the entity
- */
-class Option extends EO_Option
-{
 }
