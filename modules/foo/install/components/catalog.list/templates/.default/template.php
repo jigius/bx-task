@@ -34,10 +34,10 @@ use Foo\Catalog;
         <div class="col-12">
             <h2>
                 <?=
-                    htmlentities(
-                        $arResult["LIST_HEADER_LBL"] ??
-                        GetMessage("FOO_CATALOG_LIST_HEADER_LBL")
-                    )
+                htmlentities(
+                    $arResult["LIST_HEADER_LBL"] ??
+                    GetMessage("FOO_CATALOG_LIST_HEADER_LBL")
+                )
                 ?>
             </h2>
             <?php $arResult['GRID']->output($APPLICATION) ?>

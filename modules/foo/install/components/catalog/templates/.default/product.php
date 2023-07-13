@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var CMain $APPLICATION
  * @var CUser $user

@@ -1,2 +1,3 @@
 <?php
-$MESS ['FOO_CATALOG_LIST_HEADER'] = "Список производителей";
+
+$MESS['FOO_CATALOG_LIST_HEADER'] = "Список производителей";

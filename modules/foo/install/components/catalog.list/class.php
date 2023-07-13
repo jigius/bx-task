@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Plain component. Is used for output items
@@ -33,12 +34,12 @@ final class FooCatalogList extends CBitrixComponent
     {
         $urn0 =
             (new Catalog\App\URN\UrnVanilla(
-                ($this->arParams["SEF_MODE"] ?? "N") === "Y"))
-                ->withBasePath(
-                    !empty($this->arParams["SEF_FOLDER"]) ?
-                        $this->arParams["SEF_FOLDER"] :
-                        GetDirPath(GetPagePath())
-                );
+            ($this->arParams["SEF_MODE"] ?? "N") === "Y"))
+            ->withBasePath(
+                !empty($this->arParams["SEF_FOLDER"]) ?
+                    $this->arParams["SEF_FOLDER"] :
+                    GetDirPath(GetPagePath())
+            );
         $bc = new Catalog\App\BreadcrumbsVanilla();
         $grid = new Catalog\App\GridVanilla(new Catalog\App\FilterVanilla(), new Catalog\App\PaginationVanilla());
         if (isset($this->arParams["BRAND_ID"]) && isset($this->arParams["MODEL_ID"])) {

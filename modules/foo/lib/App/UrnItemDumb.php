@@ -9,10 +9,10 @@ use LogicException;
  */
 final class UrnItemDumb implements UrnItemInterface
 {
-     /**
-      * Cntr
-      */
-     public function __construct()
+    /**
+     * Cntr
+     */
+    public function __construct()
     {
     }
 

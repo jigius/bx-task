@@ -10,10 +10,10 @@ use Foo\Catalog;
  * @var CBitrixComponent $component
  * @var array $arParams
  * @var array{
- *     PRODUCT: Catalog\ORM\Product,
- *     MODEL: Catalog\ORM\Model,
- *     MANUFACTURER: Catalog\ORM\Manufacturer,
- *     OPTIONS: Catalog\ORM\ProductOption[],
+ *     PRODUCT: Catalog\ORM\ProductTable,
+ *     MODEL: Catalog\ORM\ModelTable,
+ *     MANUFACTURER: Catalog\ORM\ManufacturerTable,
+ *     OPTIONS: Catalog\ORM\EO_ProductOption[],
  *     MODEL_URN: Catalog\App\URN\UrnInterface,
  *     MANUFACTURER_URN: Catalog\App\URN\UrnInterface,
  *     BREADCRUMBS: Catalog\App\BreadcrumbsInterface
@@ -55,14 +55,14 @@ use Foo\Catalog;
                     </th>
                     <td><?= htmlentities($arResult['PRODUCT']->getIssued()) ?></td>
                 </tr>
-                <?php if (!empty($arResult['OPTIONS'])): ?>
+                <?php if (!empty($arResult['OPTIONS'])) : ?>
                 <tr>
                     <th scope="row" class="text-right">
                         <?= htmlentities(GetMessage("FOO_CATALOG_DETAIL_LABEL_OPTIONS")) ?>
                     </th>
                     <td>
                         <ul>
-                            <?php foreach ($arResult['OPTIONS'] as $option): ?>
+                            <?php foreach ($arResult['OPTIONS'] as $option) : ?>
                             <li><?= htmlentities($option->getName()) ?></li>
                             <?php endforeach; ?>
                         </ul>

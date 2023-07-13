@@ -2,6 +2,7 @@
 /**
  * @var Bitrix\Main\Application $APPLICATION
  */
+
 IncludeModuleLangFile(__FILE__);
 ?>
 <p><?= GetMessage("FOO_INSTALL") ?></p>
@@ -11,13 +12,13 @@ IncludeModuleLangFile(__FILE__);
     <input type="hidden" name="id" value="foo" />
     <input type="hidden" name="install" value="Y" />
     <input type="hidden" name="step" value="2" />
-    <?php if (!empty($footprint)): ?>
+    <?php if (!empty($footprint)) : ?>
     <p><?= GetMessage("FOO_INST_FOUND_DATA")?></p>
     <p>
         <input type="checkbox" name="clean" id="clean" value="1" />
         <label for="clean"><?= GetMessage("FOO_INST_DEL_CTRL_LBL")?></label>
     </p>
-    <?php else: ?>
+    <?php else : ?>
         <input type="hidden" name="clean" value="1" />
     <?php endif; ?>
     <input type="submit" name="inst" id="inst" value="<?= GetMessage("MOD_INSTALL") ?>">

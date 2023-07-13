@@ -1,5 +1,6 @@
 <?php
-$MESS ['FOO_CATALOG_GRID_LBL_FID'] = "ИД";
-$MESS ['FOO_CATALOG_GRID_LBL_FCREATED'] = "Создан";
-$MESS ['FOO_CATALOG_GRID_LBL_FNAME'] = "Наименование";
-$MESS ['FOO_CATALOG_GRID_CTRL_VIEW'] = "Просмотр";
+
+$MESS['FOO_CATALOG_GRID_LBL_FID'] = "ИД";
+$MESS['FOO_CATALOG_GRID_LBL_FCREATED'] = "Создан";
+$MESS['FOO_CATALOG_GRID_LBL_FNAME'] = "Наименование";
+$MESS['FOO_CATALOG_GRID_CTRL_VIEW'] = "Просмотр";

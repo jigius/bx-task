@@ -48,5 +48,4 @@ final class UrnItemProduct implements UrnItemInterface
     {
         return new self($this->urn);
     }
-
 }

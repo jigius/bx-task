@@ -15,7 +15,7 @@ class foo extends CModule
     /**
      * Cntr
      */
-    function __construct()
+    public function __construct()
     {
         $arModuleVersion = [];
         include(__DIR__ . "/version.php");

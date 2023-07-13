@@ -1,4 +1,5 @@
 <?php
+
 $MESS["FOO_MODULE_NAME"] = "Тестовое задание";
 $MESS["FOO_MODULE_DESCRIPTION"] = "Тестовое задание <Магазин ноутбуков>";
 $MESS["FOO_INSTALL_TITLE"] = "Установка модуля тестового задания";

@@ -155,7 +155,7 @@ final class UrnVanilla implements UrnInterface
                 [
                     rtrim($this->i['base'], "/"),
                     $this->disabledIndex ? "/" : "/index.php",
-                    !empty($query)? "?" . $query: ""
+                    !empty($query) ? "?" . $query : ""
                 ]
             );
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Plain component. Is used for output product

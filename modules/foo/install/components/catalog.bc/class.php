@@ -1,9 +1,11 @@
 <?php
+
 /**
  *
  * Plain component. Is used for output items
  *
  */
+
 use Bitrix\Main;
 use Foo\Catalog;
 

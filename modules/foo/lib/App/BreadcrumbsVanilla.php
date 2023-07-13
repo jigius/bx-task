@@ -20,8 +20,8 @@ final class BreadcrumbsVanilla implements BreadcrumbsInterface
     public function __construct()
     {
         $this->i = [];
-
     }
+
     /**
      * @inheritDoc
      */

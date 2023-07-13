@@ -1,9 +1,11 @@
 <?php
+
 /**
  *
  * Complex component. Is used for pass a user's request to one of defined plain component.
  *
  */
+
 use Bitrix\Main;
 use Bitrix\Iblock;
 use Foo\Catalog\Foundation as F;
