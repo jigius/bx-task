@@ -50,7 +50,7 @@ final class FooCatalogDetail extends CBitrixComponent
         if ($product === null) {
             throw new RuntimeException("not found", 404);
         }
-        if (!$product instanceof Catalog\ORM\Product) {
+        if (!$product instanceof Catalog\ORM\EO_Product) {
             throw new LogicException("type invalid");
         }
         $urn =
@@ -71,7 +71,7 @@ final class FooCatalogDetail extends CBitrixComponent
         $this->arResult["MANUFACTURER_URN"] = $urn->withManufacturer($model->getManufacturerId());
         $this->arResult["OPTIONS"] =
             array_map(
-                function (Catalog\ORM\ProductOption $po): Catalog\ORM\Option {
+                function (Catalog\ORM\EO_ProductOption $po): Catalog\ORM\EO_Option {
                     return $po->getOption();
                 },
                 (function ($productOptions): array {
