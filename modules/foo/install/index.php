@@ -3,7 +3,7 @@
 use Foo\Catalog as L;
 use Bitrix\Main;
 
-require_once __DIR__ . "/../../../../bitrix/vendor/autoload.php";
+require_once __DIR__ . "/../vendor/autoload.php";
 IncludeModuleLangFile(__FILE__);
 
 if (class_exists("foo")) {
@@ -57,6 +57,22 @@ class foo extends CModule
             }
             $APPLICATION->IncludeAdminFile(GetMessage("FOO_INSTALL_TITLE"), __DIR__ . $tplFile);
         }
+    }
+
+    /**
+     * @return array[]
+     */
+    public function GetModuleRightList(): array
+    {
+        return
+            [
+                "reference_id" => ["D", "R", "W"],
+                "reference" => [
+                    "[D] " . GetMessage("FOO_CATALOG_RIGHT_DENIED"),
+                    "[R] " . GetMessage("FOO_CATALOG_RIGHT_VIEW"),
+                    "[W] " . GetMessage("FOO_CATALOG_RIGHT_ADMIN")
+                ]
+            ];
     }
 
     /**
