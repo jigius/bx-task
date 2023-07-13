@@ -26,7 +26,7 @@ use Foo\Catalog;
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2><?= htmlentities(GetMessage("FOO_CATALOG_FILTER_HEADER_LBL")) ?></h2>
+            <h2><?= htmlentities(GetMessage("FOO_CATALOG_LIST_FILTER_LBL")) ?></h2>
             <?php $arResult['GRID']->filter()->output($APPLICATION) ?>
         </div>
     </div>
