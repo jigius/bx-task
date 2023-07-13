@@ -58,6 +58,7 @@ return array(
     'Comment' => $vendorDir . '/phing/phing/classes/phing/filters/StripLineComments.php',
     'ComposerTask' => $vendorDir . '/phing/phing/classes/phing/tasks/ext/ComposerTask.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+<<<<<<< HEAD
     'CompositeMapper' => $vendorDir . '/phing/phing/classes/phing/mappers/CompositeMapper.php',
     'ConcatFilter' => $vendorDir . '/phing/phing/classes/phing/filters/ConcatFilter.php',
     'Condition' => $vendorDir . '/phing/phing/classes/phing/tasks/system/condition/Condition.php',
@@ -158,6 +159,10 @@ return array(
     'FilterReader' => $vendorDir . '/phing/phing/classes/phing/system/io/FilterReader.php',
     'FirstMatchMapper' => $vendorDir . '/phing/phing/classes/phing/mappers/FirstMatchMapper.php',
     'FlattenMapper' => $vendorDir . '/phing/phing/classes/phing/mappers/FlattenMapper.php',
+=======
+    'Foo\\Catalog\\App\\BreadcrumbsInterface' => $baseDir . '/lib/App/BreadcrumbsInterface.php',
+    'Foo\\Catalog\\App\\BreadcrumbsVanilla' => $baseDir . '/lib/App/BreadcrumbsVanilla.php',
+>>>>>>> afe5c07 (adds breadcrumbs + adds meats to the detail comp)
     'Foo\\Catalog\\App\\FilterInterface' => $baseDir . '/lib/App/FilterInterface.php',
     'Foo\\Catalog\\App\\FilterVanilla' => $baseDir . '/lib/App/FilterVanilla.php',
     'Foo\\Catalog\\App\\GridInterface' => $baseDir . '/lib/App/GridInterface.php',

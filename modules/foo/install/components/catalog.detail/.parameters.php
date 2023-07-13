@@ -7,6 +7,26 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 $arComponentParameters = [
     "GROUPS" => [],
     "PARAMETERS" => [
-
-    ],
+        "ID" => [
+            "PARENT" => "DATA_SOURCE",
+            "NAME" => GetMessage("FOO_CATALOG_DETAIL_DESC_ID"),
+            "TYPE" => "STRING",
+            "DEFAULT" => "",
+            "ADDITIONAL_VALUES" => "N"
+        ],
+        "SEF_MODE" => [
+            "PARENT" => "DATA_SOURCE",
+            "NAME" => GetMessage("FOO_CATALOG_DETAIL_DESC_SEF_MODE"),
+            "TYPE" => "STRING",
+            "DEFAULT" => "N",
+            "ADDITIONAL_VALUES" => "N"
+        ],
+        "SEF_FOLDER" => [
+            "PARENT" => "DATA_SOURCE",
+            "NAME" => GetMessage("FOO_CATALOG_DETAIL_DESC_SEF_FOLDER"),
+            "TYPE" => "STRING",
+            "DEFAULT" => "",
+            "ADDITIONAL_VALUES" => "N"
+        ]
+    ]
 ];

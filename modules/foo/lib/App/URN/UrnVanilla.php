@@ -17,14 +17,20 @@ final class UrnVanilla implements UrnInterface
      * @var array
      */
     private array $i;
+    /**
+     * @var bool
+     */
+    private bool $disabledIndex;
 
     /**
      * Cntr
      * @param bool $sefMode
+     * @param bool|null $disabledIndex
      */
-    public function __construct(bool $sefMode)
+    public function __construct(bool $sefMode, bool $disabledIndex = null)
     {
         $this->sef = $sefMode;
+        $this->disabledIndex = $disabledIndex ?? BX_DISABLE_INDEX_PAGE ?? false;
         $this->i = [];
     }
 
@@ -143,6 +149,14 @@ final class UrnVanilla implements UrnInterface
             $ret[] = "BRAND=" . (int)$this->i['manufacturerId'];
         }
         $query = implode("&", $ret);
-        return rtrim($this->i['base'], "/") . "/index.php" . (!empty($query) ? "?" . $query : "");
+        return
+            implode(
+                "",
+                [
+                    rtrim($this->i['base'], "/"),
+                    $this->disabledIndex ? "/" : "/index.php",
+                    !empty($query)? "?" . $query: ""
+                ]
+            );
     }
 }

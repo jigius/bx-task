@@ -84,6 +84,7 @@ class ComposerStaticInit81090acd5f8c4d38cdcf3aa3a8f18366
         'Comment' => __DIR__ . '/..' . '/phing/phing/classes/phing/filters/StripLineComments.php',
         'ComposerTask' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/ext/ComposerTask.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+<<<<<<< HEAD
         'CompositeMapper' => __DIR__ . '/..' . '/phing/phing/classes/phing/mappers/CompositeMapper.php',
         'ConcatFilter' => __DIR__ . '/..' . '/phing/phing/classes/phing/filters/ConcatFilter.php',
         'Condition' => __DIR__ . '/..' . '/phing/phing/classes/phing/tasks/system/condition/Condition.php',
@@ -184,6 +185,10 @@ class ComposerStaticInit81090acd5f8c4d38cdcf3aa3a8f18366
         'FilterReader' => __DIR__ . '/..' . '/phing/phing/classes/phing/system/io/FilterReader.php',
         'FirstMatchMapper' => __DIR__ . '/..' . '/phing/phing/classes/phing/mappers/FirstMatchMapper.php',
         'FlattenMapper' => __DIR__ . '/..' . '/phing/phing/classes/phing/mappers/FlattenMapper.php',
+=======
+        'Foo\\Catalog\\App\\BreadcrumbsInterface' => __DIR__ . '/../..' . '/lib/App/BreadcrumbsInterface.php',
+        'Foo\\Catalog\\App\\BreadcrumbsVanilla' => __DIR__ . '/../..' . '/lib/App/BreadcrumbsVanilla.php',
+>>>>>>> afe5c07 (adds breadcrumbs + adds meats to the detail comp)
         'Foo\\Catalog\\App\\FilterInterface' => __DIR__ . '/../..' . '/lib/App/FilterInterface.php',
         'Foo\\Catalog\\App\\FilterVanilla' => __DIR__ . '/../..' . '/lib/App/FilterVanilla.php',
         'Foo\\Catalog\\App\\GridInterface' => __DIR__ . '/../..' . '/lib/App/GridInterface.php',

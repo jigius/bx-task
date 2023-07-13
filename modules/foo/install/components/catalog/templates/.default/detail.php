@@ -23,13 +23,14 @@ if (
 ) {
     throw new InvalidArgumentException("could not fetch data about detail");
 }
-
 $APPLICATION
     ->IncludeComponent(
         "foo:catalog.detail",
         ".default",
         [
-            "ID" => (int)$arResult["VARIABLES"]["DETAIL"]
+            "ID" => (int)$arResult["VARIABLES"]["DETAIL"],
+            "SEF_MODE" => $arParams["SEF_MODE"] ?? "N",
+            "SEF_FOLDER" => $arParams["SEF_FOLDER"] ?? ""
         ],
         $component,
         array("HIDE_ICONS" => "Y")

@@ -2,10 +2,10 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
 $arComponentDescription = [
-    "NAME" => GetMessage("FOO_CATALOG_DETAIL_NAME"),
-    "DESCRIPTION" => GetMessage("FOO_CATALOG_DETAIL_DESCRIPTION"),
+    "NAME" => GetMessage("FOO_CATALOG_BC_NAME"),
+    "DESCRIPTION" => GetMessage("FOO_CATALOG_BC_DESCRIPTION"),
     "ICON" => "/images/icon.gif",
-    "SORT" => 30,
+    "SORT" => 40,
     "PATH" => [
         "ID" => "content",
         "CHILD" => [
