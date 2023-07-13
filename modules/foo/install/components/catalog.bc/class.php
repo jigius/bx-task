@@ -14,6 +14,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 
 Main\Loader::includeModule('foo');
+Main\UI\Extension::load("ui.bootstrap4");
 
 final class FooCatalogBc extends CBitrixComponent
 {
