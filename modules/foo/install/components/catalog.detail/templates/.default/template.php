@@ -30,6 +30,7 @@ use Foo\Catalog;
 <div class="container">
     <div class="row">
         <div class="col-12">
+            <h2><?= htmlentities(GetMessage("FOO_CATALOG_DETAIL_HEADER_LBL")) ?></h2>
             <table class="table">
                 <tbody>
                 <tr>

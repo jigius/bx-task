@@ -15,25 +15,13 @@
  * @var array $templateData
  */
 
-use Foo\Catalog;
-
 $APPLICATION
     ->IncludeComponent(
         "foo:catalog.list",
         ".default",
         [
-            "GRID" =>
-                (new Catalog\App\GridVanilla(
-                    new Catalog\App\FilterVanilla(),
-                    new Catalog\App\PaginationVanilla(),
-                    new Catalog\App\UrnItemManufacturer(
-                        (new Catalog\App\URN\UrnVanilla($arParams["SEF_MODE"] === "Y"))
-                            ->withBasePath($arParams["SEF_FOLDER"] ?? $APPLICATION->GetCurDir())
-                    )
-                ))
-                    ->withId("brand")
-                    ->withQuery(Catalog\ORM\ManufacturerTable::query()),
-            "LIST_HEADER_LBL" => GetMessage("FOO_CATALOG_LIST_HEADER")
+            "SEF_MODE" => $arParams["SEF_MODE"] ?? "N",
+            "SEF_FOLDER" => $arParams["SEF_FOLDER"] ?? ""
         ],
         $component,
         array("HIDE_ICONS" => "Y")

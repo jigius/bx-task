@@ -11,7 +11,13 @@ interface UrnItemInterface
 {
     /**
      * @param int $id
-     * @return UrnItemInterface
+     * @return Urn\UrnInterface
      */
     public function withId(int $id): URN\UrnInterface;
+
+    /**
+     * @param URN\UrnInterface $urn
+     * @return UrnItemInterface
+     */
+    public function withOrigin(URN\UrnInterface $urn): UrnItemInterface;
 }

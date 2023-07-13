@@ -171,6 +171,7 @@ return array(
     'Foo\\Catalog\\App\\PaginationVanilla' => $baseDir . '/lib/App/PaginationVanilla.php',
     'Foo\\Catalog\\App\\URN\\UrnInterface' => $baseDir . '/lib/App/URN/UrnInterface.php',
     'Foo\\Catalog\\App\\URN\\UrnVanilla' => $baseDir . '/lib/App/URN/UrnVanilla.php',
+    'Foo\\Catalog\\App\\UrnItemDumb' => $baseDir . '/lib/App/UrnItemDumb.php',
     'Foo\\Catalog\\App\\UrnItemInterface' => $baseDir . '/lib/App/UrnItemInterface.php',
     'Foo\\Catalog\\App\\UrnItemManufacturer' => $baseDir . '/lib/App/UrnItemManufacturer.php',
     'Foo\\Catalog\\App\\UrnItemModel' => $baseDir . '/lib/App/UrnItemModel.php',

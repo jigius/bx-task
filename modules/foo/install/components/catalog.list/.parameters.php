@@ -9,8 +9,8 @@ $arSortFields = [
     "CREATED" => GetMessage("FOO_CATALOG_LIST_DESC_FCREATED"),
 ];
 $arSorts = [
-    "ASC"=>GetMessage("FOO_CATALOG_LIST_DESC_ASC"),
-    "DESC"=>GetMessage("FOO_CATALOG_LIST_DESC_DESC"),
+    "ASC" => GetMessage("FOO_CATALOG_LIST_DESC_ASC"),
+    "DESC" => GetMessage("FOO_CATALOG_LIST_DESC_DESC"),
 ];
 
 $arComponentParameters = [
@@ -31,6 +31,6 @@ $arComponentParameters = [
             "DEFAULT" => "DESC",
             "VALUES" => $arSorts,
             "ADDITIONAL_VALUES" => "N",
-        ],
+        ]
     ],
 ];

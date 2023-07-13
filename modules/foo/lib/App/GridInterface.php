@@ -36,6 +36,14 @@ interface GridInterface
     public function withColumn(string $id, string $name): GridInterface;
 
     /**
+     * Defines an urnitem instance
+     * @param UrnItemInterface $urn
+     * @return GridInterface
+     */
+    public function withUrn(UrnItemInterface $urn): GridInterface;
+
+
+    /**
      * Outputs the grid's content
      * @param CMain $app
      * @param string $template

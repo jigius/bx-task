@@ -197,6 +197,7 @@ class ComposerStaticInit81090acd5f8c4d38cdcf3aa3a8f18366
         'Foo\\Catalog\\App\\PaginationVanilla' => __DIR__ . '/../..' . '/lib/App/PaginationVanilla.php',
         'Foo\\Catalog\\App\\URN\\UrnInterface' => __DIR__ . '/../..' . '/lib/App/URN/UrnInterface.php',
         'Foo\\Catalog\\App\\URN\\UrnVanilla' => __DIR__ . '/../..' . '/lib/App/URN/UrnVanilla.php',
+        'Foo\\Catalog\\App\\UrnItemDumb' => __DIR__ . '/../..' . '/lib/App/UrnItemDumb.php',
         'Foo\\Catalog\\App\\UrnItemInterface' => __DIR__ . '/../..' . '/lib/App/UrnItemInterface.php',
         'Foo\\Catalog\\App\\UrnItemManufacturer' => __DIR__ . '/../..' . '/lib/App/UrnItemManufacturer.php',
         'Foo\\Catalog\\App\\UrnItemModel' => __DIR__ . '/../..' . '/lib/App/UrnItemModel.php',

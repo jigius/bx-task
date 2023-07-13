@@ -5,7 +5,6 @@ namespace Foo\Catalog\App;
 use Bitrix\Main;
 use CMain;
 use CAjax;
-use Foo\Catalog\App\URN\UrnInterface;
 use LogicException;
 
 /**
@@ -22,26 +21,21 @@ final class GridVanilla implements GridInterface
      */
     private PaginationInterface $nav;
     /**
-     * @var array{query: Main\ORM\Query\Query|null}
+     * @var array{query: Main\ORM\Query\Query|null, urn: UrnItemInterface}
      */
     private array $i;
-    /**
-     * @var UrnItemInterface
-     */
-    private UrnItemInterface $urn;
 
     /**
      * Cntr
      * @param FilterInterface $filter
      * @param PaginationInterface $nav
-     * @param UrnItemInterface $urn
      */
-    public function __construct(FilterInterface $filter, PaginationInterface $nav, UrnItemInterface $urn)
+    public function __construct(FilterInterface $filter, PaginationInterface $nav)
     {
         $this->filter = $filter;
         $this->nav = $nav;
-        $this->urn = $urn;
         $this->i = [
+            'urn' => new UrnItemDumb(),
             'columns' => [
                 [
                     'id' => 'ID',
@@ -109,6 +103,16 @@ final class GridVanilla implements GridInterface
 
     /**
      * @inheritDoc
+     */
+    public function withUrn(UrnItemInterface $urn): self
+    {
+        $that = $this->blueprinted();
+        $that->i['urn'] = $urn;
+        return $that;
+    }
+
+    /**
+     * @inheritDoc
      * @throws LogicException|Main\ObjectPropertyException|Main\SystemException
      */
     public function output(CMain $app, string $template = ".default"): void
@@ -168,7 +172,8 @@ final class GridVanilla implements GridInterface
                             [
                                 "text"    => GetMessage("FOO_CATALOG_GRID_CTRL_VIEW"),
                                 'default' => true,
-                                "onclick" => "document.location.href=\"{$this->urn->withId((int)$row['ID'])->urn()}\""
+                                "onclick" =>
+                                    "document.location.href=\"{$this->i['urn']->withId((int)$row['ID'])->urn()}\""
                             ]
                         ]
                     ];
@@ -215,7 +220,7 @@ final class GridVanilla implements GridInterface
      */
     public function blueprinted(): self
     {
-        $that = new self($this->filter, $this->nav, $this->urn);
+        $that = new self($this->filter, $this->nav);
         $that->i = $this->i;
         return $that;
     }

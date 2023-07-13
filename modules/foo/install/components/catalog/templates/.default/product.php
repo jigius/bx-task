@@ -15,13 +15,13 @@
  * @var array $templateData
  */
 
-use Foo\Catalog;
-
 if (
     !isset($arResult["VARIABLES"]["BRAND"]) ||
     !is_numeric($arResult["VARIABLES"]["BRAND"]) ||
+    (int)$arResult["VARIABLES"]["BRAND"] <= 0 ||
     !isset($arResult["VARIABLES"]["MODEL"]) ||
-    !is_numeric($arResult["VARIABLES"]["MODEL"])
+    !is_numeric($arResult["VARIABLES"]["MODEL"]) ||
+    (int)$arResult["VARIABLES"]["MODEL"] <= 0
 ) {
     throw new InvalidArgumentException("could not fetch data about product");
 }
@@ -31,25 +31,10 @@ $APPLICATION
         "foo:catalog.list",
         ".default",
         [
-            "GRID" =>
-                (new Catalog\App\GridVanilla(
-                    new Catalog\App\FilterVanilla(),
-                    new Catalog\App\PaginationVanilla(),
-                    new Catalog\App\UrnItemProduct(
-                        (new Catalog\App\URN\UrnVanilla($arParams["SEF_MODE"] === "Y"))
-                            ->withBasePath($arParams["SEF_FOLDER"] ?? $APPLICATION->GetCurDir())
-                            ->withManufacturer((int)$arResult["VARIABLES"]["BRAND"])
-                            ->withModel((int)$arResult["VARIABLES"]["MODEL"])
-                    )
-                ))
-                    ->withId("prod")
-                    ->withQuery(
-                        Catalog\ORM\ProductTable::query()
-                            ->where("MODEL_ID", "=", (int)$arResult["VARIABLES"]["MODEL"])
-                    )
-                    ->withColumn("ISSUED", GetMessage("FOO_CATALOG_GRID_LBL_FISSUED"))
-                    ->withColumn("PRICE", GetMessage("FOO_CATALOG_GRID_LBL_FPRICE")),
-            "LIST_HEADER_LBL" => GetMessage("FOO_CATALOG_LIST_HEADER")
+            "BRAND_ID" => (int)$arResult["VARIABLES"]["BRAND"],
+            "MODEL_ID" => (int)$arResult["VARIABLES"]["MODEL"],
+            "SEF_MODE" => $arParams["SEF_MODE"] ?? "N",
+            "SEF_FOLDER" => $arParams["SEF_FOLDER"] ?? ""
         ],
         $component,
         array("HIDE_ICONS" => "Y")
