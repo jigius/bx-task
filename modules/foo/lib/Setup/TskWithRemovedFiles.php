@@ -39,7 +39,7 @@ final class TskWithRemovedFiles implements TaskInterface
         /*
          * Due the task requirements - article d.
          */
-        /*foreach ($this->fPaths->filePaths(false) as $i) {
+        foreach ($this->fPaths->filePaths(false) as $i) {
             if (count($i) !== 2) {
                 throw new LogicException("invalid type");
             }
@@ -47,7 +47,7 @@ final class TskWithRemovedFiles implements TaskInterface
             if (DeleteDirFilesEx($to) === false) {
                 throw new RuntimeException("deleting files failure");
             }
-        }*/
+        }
         return $this->origin->executed();
     }
 }
